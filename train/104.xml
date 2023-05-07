@@ -1,0 +1,26 @@
+<annotation>
+	<folder>1</folder>
+	<filename>104.png</filename>
+	<path>/home/durra/human detection dataset/1/104.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>593</width>
+		<height>564</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>human</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>22</xmin>
+			<ymin>32</ymin>
+			<xmax>149</xmax>
+			<ymax>293</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -19,6 +19,7 @@ GPIO.setmode(GPIO.BCM)
 # Set buzzer - pin 23 as output
 buzzer = 23
 GPIO.setup(buzzer, GPIO.OUT)
+buzzer_state = False
 
 # User-defined variables
 # Model info
@@ -171,14 +172,22 @@ while True:
     head_count += head_detected
     
     # Check if person count is greater than 8
-    if person_detected > 8:
-        # Make the buzzer beep
+if person_detected > 8:
+    # Make the buzzer beep if it's not already beeping
+    if not buzzer_state:
         GPIO.output(buzzer, GPIO.HIGH)
+        buzzer_state = True
         print("Beep")
-        sleep(0.5)
         GPIO.output(buzzer, GPIO.LOW)
         print("No Beep")
         sleep(0.5)
+   else:
+    # Stop the buzzer if it's beeping
+    if buzzer_state:
+        GPIO.output(buzzer, GPIO.LOW)
+        buzzer_state = False
+        print("No Beep")
+    
         # Reset person count
         person_detected = 0
         
